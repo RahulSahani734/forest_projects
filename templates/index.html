@@ -1,46 +1,71 @@
 <html>
-    <style>
-        body{
-            background-color: rgb(148, 148, 250);
-            margin: 0;
-            padding: 0;
-        }
-        .login{
-            text-align: center;
-            padding: 20px;
-            margin: 20px;
-            width: 400px;
-        }
+<style>
+    body {
+        background-color: rgb(148, 148, 250);
+        margin: 0;
+        padding: 0;
+    }
 
-        h2,button,input{
-            margin: 8px;
-            color: grey;
-        }
+    .login {
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        width: 400px;
+    }
 
+    input {
+        margin: 8px;
+        color: grey;
+    }
 
-    </style>
-    <body>
-        
-        <div class="login">
+    button {
+        margin: 8px;
+        background-color: blue;
+        color: azure;
+        border-radius: 4px;
+        padding: 2px;
+        border-color: black;
+        cursor: pointer;
+    }
 
-            <h1 style="color: rgb(180, 81, 81);"> FOREST prediction</h1>
+    button:hover {
+        background-color: orange;
+        color: black;
+    }
 
-            <!-- Main input for reciving quary to our ML -->
-            <form action="{{url_for('predict_datapoint')}}" method="post">
-                <input type="text" name="Temperature" placeholder="Temperature" required="Temperature" /><br>
-                <input type="text" name="RH" placeholder="RH" required="RH" /><br>
-                <input type="text" name="Ws" placeholder="Ws" required="Ws" /><br>
-                <input type="text" name="Rain" placeholder="Rain" required="Rain" /><br>
-                <input type="text" name="FFMC" placeholder="FFMC" required="FFMC" /><br>
-                <input type="text" name="DMC" placeholder="DMC" required="DMC" /><br>
-                <input type="text" name="ISI" placeholder="ISI" required="ISI" /><br>
-                <input type="text" name="Classes" placeholder="Classes" required="Classes" /><br>
-                <input type="text" name="Region" placeholder="Region" required="Region" /><br>
+    h2 {
+        margin: 8px;
+        font-family: sans-serif;
+        font-size: 6rem;
+        background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
 
-                <button type = "submit" class="btn btn-primary btn-block btn-large">predict</button>
-            </form>
-            <h2> the FWI prediction is {{result}}</h2>
-        </div>
-        
-    </body>
+<body>
+
+    <div class="login">
+
+        <h1 style="color: rgb(180, 81, 81);"> FOREST PREDICTION</h1>
+
+        <!-- Main input for reciving quary to our ML -->
+        <form action="{{url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="Temperature" placeholder="Temperature" required="Temperature" /><br>
+            <input type="text" name="RH" placeholder="RH" required="RH" /><br>
+            <input type="text" name="Ws" placeholder="Ws" required="Ws" /><br>
+            <input type="text" name="Rain" placeholder="Rain" required="Rain" /><br>
+            <input type="text" name="FFMC" placeholder="FFMC" required="FFMC" /><br>
+            <input type="text" name="DMC" placeholder="DMC" required="DMC" /><br>
+            <input type="text" name="ISI" placeholder="ISI" required="ISI" /><br>
+            <input type="text" name="Classes" placeholder="Classes" required="Classes" /><br>
+            <input type="text" name="Region" placeholder="Region" required="Region" /><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+        </form>
+        <h2> the FWI prediction is {{result}}</h2>
+    </div>
+
+</body>
+
 </html>
