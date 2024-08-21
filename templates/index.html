@@ -1,0 +1,25 @@
+<html>
+    <body>
+        
+        <div class="login">
+            <h1>Diabetes prediction</h1>
+
+            <!-- Main input for reciving quary to our ML -->
+            <form action="{{url_for('predict_datapoint')}}" method="post">
+                <input type="text" name="Temperature" placeholder="Temperature" required="Temperature" /><br>
+                <input type="text" name="RH" placeholder="RH" required="RH" /><br>
+                <input type="text" name="Ws" placeholder="Ws" required="Ws" /><br>
+                <input type="text" name="Rain" placeholder="Rain" required="Rain" /><br>
+                <input type="text" name="FFMC" placeholder="FFMC" required="FFMC" /><br>
+                <input type="text" name="DMC" placeholder="DMC" required="DMC" /><br>
+                <input type="text" name="ISI" placeholder="ISI" required="ISI" /><br>
+                <input type="text" name="Classes" placeholder="Classes" required="Classes" /><br>
+                <input type="text" name="Region" placeholder="Region" required="Region" /><br>
+
+                <button type = "submit" class="btn btn-primary btn-block btn-large">predict</button>
+            </form>
+            <h2> the FWI prediction is {{result}}</h2>
+
+        
+    </body>
+</html>
